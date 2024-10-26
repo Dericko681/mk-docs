@@ -22,4 +22,4 @@ markdown_extensions:
 # Repository configuration (for the edit link on pages)
 repo_name: dericko681/mk-docs
 repo_url: https://github.com/dericko681/mk-docs
-edit_uri: edit/main/docs/
+edit_uri: edit/master/docs/
