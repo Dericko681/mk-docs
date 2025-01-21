@@ -10,7 +10,7 @@ This repository contains the source files for my MkDocs documentation project, u
 ## 🚀 Live Documentation
 
 You can view the live version of this documentation at:
-[https://github.com/ADORSYS-GIS/mk-docs](https://github.com/ADORSYS-GIS/mk-docs)
+[https://github.com/dericko681/mk-docs](https://github.com/dericko681/mk-docs)
 
 ## 🛠️ Local Setup
 
@@ -18,7 +18,7 @@ To run the project locally and preview the documentation:
 
 1. **Clone the repository**:
     ```bash
-    git clone https://github.com/ADORSYS-GIS/mk-docs
+    git clone https://github.com/dericko681/mk-docs
     cd my-mkdocs-project
     ```
 
@@ -44,7 +44,7 @@ To run the project locally and preview the documentation:
     This will generate static files in the `site/` directory.
 
 - **Deploy to GitHub Pages**:
-    The project is set up to automatically deploy via GitHub Actions when changes are pushed to the `main` branch.
+    The project is set up to automatically deploy via GitHub Actions when changes are pushed to the `master` branch.
 
     To manually deploy:
     ```bash
