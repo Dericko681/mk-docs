@@ -1,0 +1,36 @@
+name: Compress Docker Image with Docker Slim
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-compress:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Login to Docker Hub
+      run: echo ${{ secrets.DOCKERHUB_PASSWORD }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
+
+    - name: Install Docker Slim
+      uses: kitabisa/docker-slim-action@v1
+      env:
+        DSLIM_HTTP_PROBE: false
+      with:
+        target: IMAGE_NAME:latest
+        tag: "slim"
+
+    - name: Build Docker Image
+      run: docker build -t IMAGE_NAME:latest .
+
+    - name: Compress Docker Image with Docker Slim
+      run: docker run --rm dslim/slim IMAGE_NAME:latest
+
+    - name: Tag and Push Compressed Image
+      run: |
+        docker tag IMAGE_NAME:slim your_dockerhub_username/IMAGE_NAME:slim
+        docker push your_dockerhub_username/IMAGE_NAME:slim
