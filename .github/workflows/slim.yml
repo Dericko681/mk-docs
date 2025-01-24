@@ -1,4 +1,4 @@
-name: Compress Docker Image with Docker Slim
+name: Compress Docker Image with Docker Slim tool
 
 on:
   push:
